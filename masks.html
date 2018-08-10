@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Masks Practice</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+    <style>
+    
+    header {
+        background-image: url("http://www.tokkoro.com/picsup/3072798-adventure_alpine_background_black-and-white_clouds_cold_frost_glacier_ice_landscape_mountains_nature_rock_scenic_sky_snow_travel_winter.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 1400px;
+    }
+
+    svg {
+        width: 100%;
+    }
+
+    .text {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    </style>
+</head>
+<body>
+
+    <svg width="660" height="220" style="outline: 1px solid red">
+        <defs>
+            <linearGradient id="MyGradient">
+                <stop offset="5%" stop-color="green"/>
+                <stop offset="95%" stop-color="gold"/>
+            </linearGradient>
+
+            <mask id="text-mask-1" x="0" y="0" width="100" height="100">
+                <text x="50" y="140" font-family="Helvetica" font-weight="bold" font-size="7em" fill="#fff">
+                    Text Mask
+                </text>
+            </mask>
+        </defs>
+
+        <rect fill="url(#MyGradient)" x="10" y="10" width="600" height="220"/>
+    </svg>
+
+
+    <header>
+
+        <svg width="100%" height="1400px">
+            <defs>
+
+                <linearGradient id="gradient" gradientTransform="rotate(75)">
+                    <stop offset="15%" stop-color="blue" stop-opacity="0.1"/>
+                    <stop offset="90%" stop-color="darkslategrey" stop-opacity="1"/>
+                </linearGradient>
+
+                <mask id="mask">
+                    <rect width="100%" height="100%" fill="#fff"/>
+                    <text class="text" x="10%" y="500px" font-size="4em" font-weight="300">SVG</text>
+                    <text class="text" x="10%" y="750px" font-size="17em" letter-spacing="10">TEXT</text>
+                    <text class="text" x="10%" y="1000px" font-size="17em" letter-spacing="10">MASKS</text>
+                </mask>
+
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#gradient)" fill-opacity="1" mask="url(#mask)" />
+        </svg>
+
+    </header>
+    
+</body>
+</html>

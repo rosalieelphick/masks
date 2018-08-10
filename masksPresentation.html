@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG Masks</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800|Caveat:700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+<body>
+
+    <header>
+        <svg width="100%" height="100%">
+        
+            <defs>
+                <mask id="maskHeader">
+                    <rect width="100%" height="100%" fill="white"/>
+
+                    <text x="170" y="200" font-family="Caveat" fill="black" font-size="15rem" font-weight="800">SVG</text>
+
+                    <text x="50" y="400" font-family="Open Sans" fill="black" font-size="15rem" font-weight="800">masks</text>
+
+                    <text x="600" y="460" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">what they are,</text>
+
+                    <text x="600" y="510" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">how they work,</text>
+
+                    <text x="600" y="560" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">and how to use them.</text>
+                </mask>
+            </defs>
+s
+            <rect width="100%" height="100%" fill="#f1f1ef" fill-opacity="1" mask="url(#maskHeader)"/>
+        
+        </svg>
+
+        <div class="headerLine1">
+        </div>
+        <div class="headerLine2">
+        </div>
+
+    </header>
+
+    <section class="baseImage">
+        <div class="realMoon">
+            <img src="assets/moon.jpg" alt="">
+        </div>
+
+        <div class="maskExample">
+            <svg width="100%" height="100%">
+                <defs>
+                    <mask id="maskExample">
+                        <circle cx="50%" cy="47.9%" r="28%" fill="white" />
+                    </mask>
+                </defs>
+                <image width="100%" height="100%" xlink:href="assets/moon.jpg" mask="url(#maskExample)"/>
+            </svg>
+        </div>
+
+    </section>
+
+    <section class="moonSection">
+
+        <div class="moon moonMask1">
+            <svg width="100%" height="100%">
+                <defs>
+                    <mask id="moonMask1">
+                        <circle cx="50%" cy="48%" r="24%" fill="white"/>
+                    </mask>
+                </defs>
+                <image width="100%" height="100%" xlink:href="assets/moon.jpg" mask="url(#moonMask1)"/>
+            </svg>
+            <img src="assets/moonScreenshot1.png" alt="">
+        </div>
+        
+        <div class="moon moonMask2">
+            <svg width="100%" height="100%">
+                <defs>
+                    <mask id="moonMask2">
+                        <circle cx="50%" cy="48%" r="24%" fill="grey" />
+                    </mask>
+                </defs>
+                <image width="100%" height="100%" xlink:href="assets/moon.jpg" mask="url(#moonMask2)"/>
+            </svg>
+            <img src="assets/moonScreenshot2.png" alt="">
+        </div>
+
+        <div class="moon moonMask3">
+            <svg width="100%" height="100%">
+                <defs>
+                    <mask id="moonMask3">
+                        <circle cx="50%" cy="48%" r="24%" fill="darkslategrey" />
+                    </mask>
+                </defs>
+
+                <image width="100%" height="100%" xlink:href="assets/moon.jpg" mask="url(#moonMask3)" />
+            </svg>
+
+            <img src="assets/moonScreenshot3.png" alt="">
+        </div>
+    </section>
+
+    <section class="text">
+        <div class="textImage">
+            <img src="assets/clouds.jpg" alt="">
+
+        </div>
+
+        <div class="textMask">
+
+            <svg width="100%" height="100%">
+                
+                <defs>
+                    <mask id="mask2">
+                        <rect width="100%" height="100%" fill="black"/>
+                        <text x="50" y="150" font-family="Open Sans" fill="white" font-size="9rem" font-weight="800">text</text>
+                        <text x="50" y="300" font-family="Open Sans" fill="white" font-size="11rem" font-weight="800">MASK</text>
+                        
+
+                    </mask>
+                </defs>
+                
+                <image width="100%" height="100%" xlink:href="assets/clouds.jpg" mask="url(#mask2)" />
+                
+            </svg>
+            
+        </div>
+
+        <div class="textMaskScreenshot">
+            <img src="assets/textScreenshot.png" alt="">
+        </div>   
+
+    </section>
+
+    <section class="gradient">
+
+
+
+
+
+
+        <svg width="100%" height="1400px">
+
+            <defs>
+                <linearGradient id="gradient" gradientTransform="rotate(75)">
+                    <stop offset="15%" stop-color="blue" stop-opacity="0.1" />
+                    <stop offset="90%" stop-color="darkslategrey" stop-opacity="1" />
+                </linearGradient>
+        
+                <mask id="mask3">
+                    <rect width="100%" height="100%" fill="#fff" />
+                    <text class="text" font-family="Open Sans" x="10%" y="500px" font-weight="800" font-size="5rem">SVG</text>
+                    <text class="text" font-family="Open Sans" x="10%" y="750px" font-weight="800" font-size="17rem" letter-spacing="10">TEXT</text>
+                    <text class="text" font-family="Open Sans" x="10%" y="1000px"  font-weight="800" font-size="17rem" letter-spacing="10">MASKS</text>
+                </mask>
+            </defs>
+        
+            <rect width="100%" height="100%" fill="url(#gradient)" fill-opacity="1" mask="url(#mask3)"/>
+
+        </svg>
+
+    </section>
+
+    <section class="gradientScreenshot">
+
+        <img src="assets/gradientScreenshot.png" alt="">
+    </section>
+
+
+
+    <footer>
+
+        <svg width="100%" height="100%">
+        
+            <defs>
+                <mask id="maskFooter">
+                    <rect width="100%" height="100%" fill="white" />
+        
+                    <text x="50" y="100" font-family="Caveat" fill="black" font-size="8rem" font-weight="800">why use</text>
+        
+                    <text x="50" y="230" font-family="Open Sans" fill="black" font-size="10rem" font-weight="800">svg masks?</text>
+        
+                    <text x="600" y="330" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px"> | widely supported</text>
+        
+                    <text x="600" y="400" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">| fully scalable</text>
+
+                    <text x="600" y="470" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">| no Photoshop</text>
+        
+                    <text x="600" y="540" font-family="Open Sans" fill="black" font-size="2rem" font-weight="600" letter-spacing="2px">| flexible and customizable</text>
+
+                    
+                </mask>
+            </defs>
+            s
+            <rect width="100%" height="100%" fill="#f1f1ef" fill-opacity="1" mask="url(#maskFooter)" />
+        
+        </svg>
+
+    </footer>
+
+    
+</body>
+</html>
